@@ -1,0 +1,23 @@
+CompileFlags:
+      Add:
+        - -Wall
+        - -Wextra
+        - -Weverything
+        - -Wno-unsafe-buffer-usage
+        - -Wno-declaration-after-statement
+        - -I./include
+---
+If:
+  PathMatch: .*\.c$
+CompileFlags:
+  # Force C mode
+  Add: [‑xc, ‑std=c23]
+---
+If:
+  PathMatch: .*\.h$
+CompileFlags:
+  # Treat as C header
+  Add: [‑xc‑header, ‑std=c23]
+---
+Index:
+  StandardLibrary: true
