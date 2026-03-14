@@ -17,6 +17,10 @@ static int *map = NULL;
 int main(void)
 {
 	scanf("%d", &proc_no);
+	if(proc_no<1){
+		printf("Enter a positive intiger as input.\n");
+		return -1;
+	}
 	processes = (struct proc *)malloc(sizeof(struct proc) * (unsigned long)proc_no);
 	if (processes == NULL) {
 		perror("Failed to allocate Memory");
@@ -61,9 +65,13 @@ int main(void)
 }
 static int sort(const void *a, const void *b)
 {
-	const int var_a = processes[(*((const int *)a))].at;
-	const int var_b = processes[(*((const int *)b))].at;
-	return var_a - var_b;
+	const int int_a = (*((const int *)a));
+	const int int_b = (*((const int *)b));
+	int diff = processes[int_a].at - processes[int_b].at;
+	if(diff == 0){
+		diff = int_a - int_b;
+	}
+	return diff;
 }
 void fcfs(void)
 {
