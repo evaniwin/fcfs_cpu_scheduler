@@ -52,7 +52,7 @@ int main(void)
 	float avg_tat = (float)sum_tat / (float)proc_no;
 	float avg_wt = (float)sum_wt / (float)proc_no;
 
-	printf("Average Waiting Time: %.2f\n", (double)avg_wt);
+	printf("\nAverage Waiting Time: %.2f\n", (double)avg_wt);
 	printf("Average Turnaround Time: %.2f\n", (double)avg_tat);
 
 	free(map);
