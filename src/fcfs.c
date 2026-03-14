@@ -65,11 +65,11 @@ int main(void)
 }
 static int sort(const void *a, const void *b)
 {
-	const int int_a = (*((const int *)a));
-	const int int_b = (*((const int *)b));
-	int diff = processes[int_a].at - processes[int_b].at;
+	const int ind_a = (*((const int *)a));
+	const int ind_b = (*((const int *)b));
+	int diff = processes[ind_a].at - processes[ind_b].at;
 	if(diff == 0){
-		diff = int_a - int_b;
+		diff = ind_a - ind_b;
 	}
 	return diff;
 }
