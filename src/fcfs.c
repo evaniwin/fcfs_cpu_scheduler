@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+// structure that store program information
 struct proc {
 	int at;
 	int bt;
